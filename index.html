@@ -362,6 +362,66 @@ iframe {
   <!-- Llama a la función al cargar la página para establecer el estado inicial -->
       Handle();
 </script>    
+
+      <!-- WINDOWS PC -->
+<script>
+  window.onload = function() {
+       if (!/Mobi|Android/i.test(navigator.userAgent)) {
+        var style = document.createElement('style');
+   style.innerHTML = `
+<style>
+.Links{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+iframe {
+    scale: 70%;
+    position: relative;
+    top: 0vh;
+    left: 0vh;
+    background: url(https://is.gd/z4OfZt);
+    border-radius: 20px;
+}
+#Modal {
+  display: none;  
+}  
+.Total {   
+    top: 25vh;
+    left: 130vh;
+    display: flex;
+    background: black;
+    border:3px solid black;
+    border-radius: 10px;
+    width: 35%;
+    height: 30vh;
+    flex-direction: row;
+    overflow: scroll; 
+    position: fixed;                   
+}
+#fullscreenButton {
+    top: 70vh;
+    left: 140vh;
+    position: fixed;
+    background:gray;
+    color:black;
+    opacity:0.5;
+    font-weight:bold;
+    font-size:15px;
+    padding:1px;
+    border-radius:50px;
+}
+#T {
+    top: -5vh;
+    left: 55vh;
+    position: relative;
+}
+</style>     
+`;        document.head.appendChild(style);
+  }
+};
+</script>
 </body>
 </html>
 
