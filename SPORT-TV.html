@@ -189,7 +189,7 @@ iframe {
            
   <i id="Opaco">Este servicio de canales es gratuito, bloqueamos la pantalla para evitar anuncios & publicidad.</i>
     
-
+       <!-- FULL SCREEN -->
 <script>
 var fullscreenButton = document.querySelector('#fullscreenButton');
 var iframe = document.querySelector('iframe');
@@ -197,15 +197,35 @@ var iframe = document.querySelector('iframe');
 fullscreenButton.addEventListener('click', function() {
   if (iframe.requestFullscreen) {
     iframe.requestFullscreen();
-  } else if (iframe.mozRequestFullScreen) { // Firefox
+  } else if (iframe.mozRequestFullScreen) { <!-- Firefox -->
     iframe.mozRequestFullScreen();
-  } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
+  } else if (iframe.webkitRequestFullscreen) { <!-- Chrome, Safari and Opera -->
     iframe.webkitRequestFullscreen();
-  } else if (iframe.msRequestFullscreen) { // IE/Edge
+  } else if (iframe.msRequestFullscreen) { <!-- IE/Edge -->
     iframe.msRequestFullscreen();
   }
 });
+
+<!-- Detectar cuando entra o sale de fullscreen -->
+document.addEventListener('fullscreenchange', function() {
+  if (document.fullscreenElement) {
+    <!-- Si estamos en pantalla completa, bloquear orientación horizontal -->
+    if (screen.orientation && screen.orientation.lock) {
+      screen.orientation.lock('landscape').catch(function(error) {
+        console.log('No se pudo bloquear la orientación:', error);
+      });
+    }
+  } else {
+    <!-- Si salimos de pantalla completa, volver a orientación vertical -->
+    if (screen.orientation && screen.orientation.lock) {
+      screen.orientation.lock('portrait').catch(function(error) {
+        console.log('No se pudo bloquear la orientación:', error);
+      });
+    }
+  }
+});
 </script>
+
 <script>
   var Total = document.querySelector('.Total');
    
