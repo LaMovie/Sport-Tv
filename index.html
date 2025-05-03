@@ -85,12 +85,20 @@ iframe {
     opacity:0.5;
     color: gray;
 }
-.Links{
+.Links {
     display: flex;    
     gap:5px;
     align-items: stretch;  
     justify-content: center;
     scale: 100%;
+}
+.Links::webkit-scrollbar {
+    width: 8px;
+    background: transparent;
+}
+.Links::webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #ff5081;
 }
 #T {
     top: 0vh;
