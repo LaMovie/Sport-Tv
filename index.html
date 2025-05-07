@@ -221,12 +221,18 @@ var iframe = document.querySelector('iframe');
 fullscreenButton.addEventListener('click', function() {
   if (iframe.requestFullscreen) {
     iframe.requestFullscreen();
+    Video.style.scale = '100%';
   } else if (iframe.mozRequestFullScreen) { <!-- Firefox -->
     iframe.mozRequestFullScreen();
+    Video.style.scale = '100%';
   } else if (iframe.webkitRequestFullscreen) { <!-- Chrome, Safari and Opera -->
     iframe.webkitRequestFullscreen();
+    Video.style.scale = '100%';
   } else if (iframe.msRequestFullscreen) { <!-- IE/Edge -->
     iframe.msRequestFullscreen();
+    Video.style.scale = '100%';
+  } else {
+     Video.style.scale = '70%';
   }
 });
 
@@ -235,14 +241,12 @@ document.addEventListener('fullscreenchange', function() {
   if (document.fullscreenElement) {
     <!-- Si estamos en pantalla completa, bloquear orientación horizontal -->
     if (screen.orientation && screen.orientation.lock) {
-      screen.orientation.lock('landscape');
-  Video.style.scale = '100%';
+      screen.orientation.lock('landscape'); 
     }
   } else {
     <!-- Si salimos de pantalla completa, volver a orientación vertical -->
     if (screen.orientation && screen.orientation.lock) {
       screen.orientation.lock('portrait');
-  Video.style.scale = '100%';
     }
   }
 });
@@ -408,18 +412,6 @@ iframe {
     title: '⚠️Si estás dentro de la APP presiona 🆗. Si estás en un navegador entra al Link🔗', 
     html: '<a href="SPORT-TV.html" target="_blank">👉🏽 Sport-Tv 👈🏽</a>', 
     icon: 'info'
-  });
-</script>
-<script>  document.addEventListener('fullscreenchange', () => {
-    if (!document.fullscreenElement) {
-      const iframe = document.querySelector('iframe');
-      if (iframe) {
-        // Restaurar estilos originales
-        iframe.style.width = "100%";
-        iframe.style.height = "100%";
-        iframe.style.transform = "scale(1)";
-      }
-    }
   });
 </script>
 </body>
