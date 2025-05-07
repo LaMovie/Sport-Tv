@@ -221,18 +221,12 @@ var iframe = document.querySelector('iframe');
 fullscreenButton.addEventListener('click', function() {
   if (iframe.requestFullscreen) {
     iframe.requestFullscreen();
-    Video.style.scale = '100%';
   } else if (iframe.mozRequestFullScreen) { <!-- Firefox -->
     iframe.mozRequestFullScreen();
-    Video.style.scale = '100%';
   } else if (iframe.webkitRequestFullscreen) { <!-- Chrome, Safari and Opera -->
     iframe.webkitRequestFullscreen();
-    Video.style.scale = '100%';
   } else if (iframe.msRequestFullscreen) { <!-- IE/Edge -->
     iframe.msRequestFullscreen();
-    Video.style.scale = '100%';
-  } else {
-     Video.style.scale = '70%';
   }
 });
 
@@ -248,6 +242,15 @@ document.addEventListener('fullscreenchange', function() {
     if (screen.orientation && screen.orientation.lock) {
       screen.orientation.lock('portrait');
     }
+  }
+});
+</script>
+
+<script> document.addEventListener("fullscreenchange", () => {
+  if (document.fullscreenElement) {
+     Video.style.scale = '100%';
+    } else {
+     Video.style.scale = '70%';
   }
 });
 </script>
