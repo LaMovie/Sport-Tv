@@ -236,6 +236,7 @@ document.addEventListener('fullscreenchange', function() {
     <!-- Si estamos en pantalla completa, bloquear orientación horizontal -->
     if (screen.orientation && screen.orientation.lock) {
       screen.orientation.lock('landscape');
+  Video.style.scale = '100%';
     }
   } else {
     <!-- Si salimos de pantalla completa, volver a orientación vertical -->
