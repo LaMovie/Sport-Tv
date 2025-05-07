@@ -229,6 +229,7 @@ document.addEventListener('fullscreenchange', function() {
     <!-- Si salimos de pantalla completa, volver a orientación vertical -->
     if (screen.orientation && screen.orientation.lock) {
       screen.orientation.lock('portrait');
+  Video.style.scale = '100%';
     }
   }
 });
