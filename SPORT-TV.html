@@ -420,6 +420,18 @@ iframe {
 };
     alert('⚠️USAR NAVEGADOR CON BLOQUEADOR 🔕 DE ANUNCIOS');
 </script>
+<script>  document.addEventListener('fullscreenchange', () => {
+    if (!document.fullscreenElement) {
+      const iframe = document.querySelector('iframe');
+      if (iframe) {
+        // Restaurar estilos originales
+        iframe.style.width = "100%";
+        iframe.style.height = "100%";
+        iframe.style.transform = "scale(1)";
+      }
+    }
+  });
+</script>
 </body>
 </html>
 
