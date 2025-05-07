@@ -248,10 +248,18 @@ document.addEventListener('fullscreenchange', function() {
    <!-- FULL SCREEN CHANGE -->
 <script> document.addEventListener("fullscreenchange", () => {
   if (document.fullscreenElement) {
-     Video.style.scale = '100%';
+     if (window.innerWidth > window.innerHeight) {
+      Video.style.scale = '100%';
     } else {
-     Video.style.scale = '50%';
-  }
+      Video.style.scale = '100%';  
+    };
+  } else {
+      if (window.innerWidth > window.innerHeight) {
+      Video.style.scale = '50%';
+    } else {
+      Video.style.scale = '100%';  
+    }
+  };
 });
 </script>
 
