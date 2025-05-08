@@ -213,6 +213,36 @@ a {
   <i id="Opaco">Este servicio de canales es gratuito, bloqueamos la pantalla para evitar anuncios & publicidad.</i>
     
 
+
+      <!-- WINDOWS PC -->
+<script>
+  window.onload = function() {
+       if (!/Mobi|Android/i.test(navigator.userAgent)) {
+     window.location.href = 'SPORT-TV-PC.html';
+     
+     Swal.fire({
+    title: '⚠️ESPERA MIENTRAS CARGA⚠️', 
+    html: '<img src="https://is.gd/5hdwIO"/>', 
+    icon: 'info'
+  });
+ }
+};
+</script>
+    <!-- PRECAUTION MOBILE -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+window.onload = function() {
+       if (/Mobi|Android/i.test(navigator.userAgent)) {
+          
+     Swal.fire({
+    title: '⚠️Si estás dentro de la APP presiona 🆗. Si estás en un navegador, Entra al Link🔗', 
+    html: '<a href="SPORT-TV-WEB.html" target="_blank">👉🏽 Sport-Tv 👈🏽</a>', 
+    icon: 'info'
+  });
+ }
+};
+</script>
+
       <!-- FULL SCREEN -->
 <script>
 var fullscreenButton = document.querySelector('#fullscreenButton');
@@ -407,24 +437,6 @@ iframe {
   <!-- Llama a la función al cargar la página para establecer el estado inicial -->
       Handle();
 </script>    
-
-      <!-- WINDOWS PC -->
-<script>
-  window.onload = function() {
-       if (!/Mobi|Android/i.test(navigator.userAgent)) {
-     window.location.href = 'SPORT-TV-PC.html';
-  }
-};
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
-  Swal.fire({
-    title: '⚠️Si estás dentro de la APP presiona 🆗. Si estás en un navegador, Entra al Link🔗', 
-    html: '<a href="SPORT-TV-WEB.html" target="_blank">👉🏽 Sport-Tv 👈🏽</a>', 
-    icon: 'info'
-  });
-</script>
 </body>
 </html>
 
