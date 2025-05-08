@@ -421,7 +421,13 @@ iframe {
   if (document.fullscreenElement) {
       Video.style.scale = '100%';
     } else {
-      evento();
+      Video.style.scale = '70%';
+      Video.style.top = '-10vh';
+      Video.style.left = '0vh';
+   fullscreenButton.style.top = '70vh';
+   fullscreenButton.style.left = '155vh';
+   Total.style.top = '25vh';
+   Total.style.left = '130vh';
     }; 
   });    
 };  
