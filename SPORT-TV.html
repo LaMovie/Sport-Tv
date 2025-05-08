@@ -236,9 +236,13 @@ document.addEventListener('fullscreenchange', function() {
 <script> document.addEventListener("fullscreenchange", () => {
   if (document.fullscreenElement) {
      if (window.innerWidth > window.innerHeight) {
-      Video.style.scale = '100%';
+      iframe.style.scale = '100%';
     } else {
-      Video.style.scale = '70%';  
+      iframe.style.scale = '70%';
+      iframe.style.top = '-10vh';
+      iframe.style.left = '0vh';
+      iframe.style.borderRadius = '20px';  
+      iframe.style.position = 'relative';
     };
   } 
 });
