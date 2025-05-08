@@ -435,6 +435,29 @@ iframe {
 };  
     alert('⚠️USAR NAVEGADOR CON BLOQUEADOR 🔕 DE ANUNCIOS');
 </script>
+
+ <!-- FULL SCREEN CHANGE MOBILE-->
+<script>
+    window.onload = function() {
+       if (/Mobi|Android/i.test(navigator.userAgent)) {
+       document.addEventListener("fullscreenchange", () => {
+  if (document.fullscreenElement) {
+     if (window.innerWidth > window.innerHeight) {
+      Video.style.scale = '100%';
+    } else {
+      Video.style.scale = '100%';  
+    };
+  } else {
+      if (window.innerWidth > window.innerHeight) {
+      Video.style.scale = '50%';
+    } else {
+      Video.style.scale = '100%';  
+    }
+   };
+  });    
+ }
+};       
+</script>
 </body>
 </html>
 
