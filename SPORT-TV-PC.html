@@ -14,16 +14,6 @@ body {
    background: #000;
    font-family: 'Lacquer', cursive;
 }   
-#Modal {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  display: flex;  
-  z-index: 9999;
-  position: fixed;
-  background: none;
-}  
 iframe {
     background: url(https://is.gd/z4OfZt);
     border-radius: 20px;
@@ -92,28 +82,26 @@ iframe {
     justify-content: center;
     scale: 100%;
 }
+.Total::-webkit-scrollbar {
+    height: 5px;
+    background: transparent;
+}
+.Total::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: gray;
+}
+.Total::-webkit-scrollbar-track {
+    background: transparent; 
+}
 #T {
     top: 0vh;
     left: 0vh;
     position: relative;
 }
-a {
-    color: #f39;
-    font-weight: bold;
-    text-decoration: none;
-    animation: Link 1.5s linear infinite running;    
-}
-@keyframes Link {
-    0% {color: blue;}
-    50% {color: orange;}
-    100% {color: #f39;}
-}
 </style>
 </head>
 <body> 
-   <img hidden src=""/>
-   
-  <div id="Modal"></div>
+      <img hidden src=""/>
      
             <center>
  <h3 id="T">🔥 SPORT-TV 🔥</h3>
@@ -212,8 +200,7 @@ a {
            
   <i id="Opaco">Este servicio de canales es gratuito, bloqueamos la pantalla para evitar anuncios & publicidad.</i>
     
-
-      <!-- FULL SCREEN -->
+       <!-- FULL SCREEN -->
 <script>
 var fullscreenButton = document.querySelector('#fullscreenButton');
 var iframe = document.querySelector('iframe');
@@ -245,24 +232,7 @@ document.addEventListener('fullscreenchange', function() {
   }
 });
 </script>
-   <!-- FULL SCREEN CHANGE -->
-<script> document.addEventListener("fullscreenchange", () => {
-  if (document.fullscreenElement) {
-     if (window.innerWidth > window.innerHeight) {
-      Video.style.scale = '100%';
-    } else {
-      Video.style.scale = '100%';  
-    };
-  } else {
-      if (window.innerWidth > window.innerHeight) {
-      Video.style.scale = '50%';
-    } else {
-      Video.style.scale = '100%';  
-    }
-  };
-});
-</script>
-
+  
 <script>
   var Total = document.querySelector('.Total');
    
@@ -297,16 +267,6 @@ iframe {
     background: url(https://is.gd/z4OfZt);
     border-radius: 20px;
 }
-#Modal {
-  top: 0vh;
-  left: -40vh;
-  width: 70%;
-  height: 100%;
-  display: flex;  
-  z-index: 9999;
-  position: fixed;
-  background: none;
-}  
 .Total {   
     top: 25vh;
     left: 150vh;
@@ -359,16 +319,6 @@ iframe {
     background: url(https://is.gd/z4OfZt);
     border-radius: 20px;
 }
-#Modal {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  display: flex;  
-  z-index: 9999;
-  position: fixed;
-  background: none;
-}  
 .Total {   
     top: 0vh;
     left: 0vh;
@@ -405,25 +355,85 @@ iframe {
  window.addEventListener("resize", Handle);
 
   <!-- Llama a la función al cargar la página para establecer el estado inicial -->
-      Handle();
+          Handle();              
 </script>    
 
       <!-- WINDOWS PC -->
 <script>
   window.onload = function() {
        if (!/Mobi|Android/i.test(navigator.userAgent)) {
-     window.location.href = 'SPORT-TV-PC.html';
+        var style = document.createElement('style');
+   style.innerHTML = `
+<style>
+.Links{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+iframe {
+    scale: 70%;
+    position: relative;
+    top: -10vh;
+    left: 0vh;
+    background: url(https://is.gd/z4OfZt);
+    border-radius: 20px;
+}
+.Total {   
+    top: 25vh;
+    left: 130vh;
+    display: flex;
+    background: black;
+    border:3px solid black;
+    border-radius: 10px;
+    width: 35%;
+    height: 30vh;
+    flex-direction: row;
+    overflow: scroll; 
+    position: fixed;                   
+}
+#fullscreenButton {
+    top: 70vh;
+    left: 155vh;
+    position: fixed;
+    background:gray;
+    color:black;
+    opacity:0.5;
+    font-weight:bold;
+    font-size:15px;
+    padding:1px;
+    border-radius:50px;
+}
+#T {
+    top: -5vh;
+    left: 50vh;
+    position: relative;
+}
+#I:hover {
+    transform: scale(1.5);
+}
+</style>     
+`;        document.head.appendChild(style);
   }
-};
-</script>
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
-  Swal.fire({
-    title: '⚠️Si estás dentro de la APP presiona 🆗. Si estás en un navegador, Entra al Link🔗', 
-    html: '<a href="SPORT-TV-WEB.html" target="_blank">👉🏽 Sport-Tv 👈🏽</a>', 
-    icon: 'info'
-  });
+  <!-- FULL SCREEN CHANGE PC -->
+ document.addEventListener("fullscreenchange", () => {
+  if (document.fullscreenElement) {
+      Video.style.scale = '100%';
+    } else {
+      Video.style.scale = '70%';
+      Video.style.top = '-10vh';
+      Video.style.left = '0vh';
+   fullscreenButton.style.top = '70vh';
+   fullscreenButton.style.left = '155vh';
+   Total.style.top = '25vh';
+   Total.style.left = '130vh';
+   T.style.top = '-5vh';
+   T.style.left = '50vh';
+    }; 
+  });    
+};  
+    alert('⚠️USAR NAVEGADOR CON BLOQUEADOR 🔕 DE ANUNCIOS');
 </script>
 </body>
 </html>
