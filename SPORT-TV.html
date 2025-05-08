@@ -237,7 +237,9 @@ document.addEventListener('fullscreenchange', function() {
   if (document.fullscreenElement) {
      if (window.innerWidth > window.innerHeight) {
       Video.style.scale = '100%';
-    }
+    } else {
+         evento();  
+    };
   } 
 });
 </script>
